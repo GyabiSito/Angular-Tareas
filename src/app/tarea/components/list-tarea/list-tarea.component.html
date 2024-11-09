@@ -1,0 +1,15 @@
+<app-add-tarea (emitirTarea)="listTareas($event)"></app-add-tarea>
+<section>
+    <ul>
+        @for(tarea of listaTareas;track tarea.id){
+        <li>{{ tarea.id }} - {{ tarea.nombre }}
+            @if(tarea.id===null || tarea.id===undefined){
+            <span>Id no valido</span>
+            }@else {
+            <a (click)="delete(tarea.id.toString())">Eliminar</a>
+            <a [routerLink]="['update', tarea.id]">Actualizar</a>
+            }
+        </li>
+        }
+    </ul>
+</section>

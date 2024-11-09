@@ -1,0 +1,11 @@
+<fieldset>
+    <legend>Update</legend>
+    <form [formGroup]="formulario" (ngSubmit)="update()">
+        <label for="id">Id:</label>
+        <input type="text" id="id" formControlName="id">
+        <label for="nombre">Tarea</label>
+        <input type="text" id="nombre" formControlName="nombre">
+
+        <button type="submit">Update</button>
+        </form>
+</fieldset>
